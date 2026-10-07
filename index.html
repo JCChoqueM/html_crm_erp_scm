@@ -1,0 +1,168 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><title>CRM, SCM, ERP y Gestión del conocimiento</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>
+:root{--bg:#f4f5fa;--cd:#fff;--tx:#1b1e2b;--mu:#5b6075;--bd:#e0e3ee;--crm:#2563eb;--scm:#c2410c;--erp:#0f766e;--km:#6d28d9;--rel:#334155;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e1120;--cd:#181c2f;--tx:#eef0f8;--mu:#a3a9c4;--bd:#2a3050;--crm:#60a5fa;--scm:#fb923c;--erp:#2dd4bf;--km:#a78bfa;--rel:#cbd5e1}}
+:root[data-theme="dark"]{--bg:#0e1120;--cd:#181c2f;--tx:#eef0f8;--mu:#a3a9c4;--bd:#2a3050;--crm:#60a5fa;--scm:#fb923c;--erp:#2dd4bf;--km:#a78bfa;--rel:#cbd5e1}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;line-height:1.45}
+.w{max-width:1000px;margin:0 auto;padding:0 14px 20px}
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);padding:10px 0;display:flex;gap:8px;overflow-x:auto;scrollbar-width:none}
+.nav::-webkit-scrollbar{display:none}
+.nav button{flex:none;font:inherit;font-size:14px;font-weight:700;cursor:pointer;border:2px solid var(--c);color:var(--c);background:var(--cd);border-radius:99px;padding:8px 16px;white-space:nowrap}
+.nav button[aria-selected=true]{background:var(--c);color:var(--bg)}
+.nav button:focus-visible{outline:3px solid var(--tx);outline-offset:2px}
+.p{display:none;--ks:color-mix(in srgb,var(--k) 9%,transparent)}.p.on{display:block}
+.hd{display:flex;gap:16px;align-items:center;flex-wrap:wrap;background:var(--k);color:var(--bg);border-radius:18px;padding:22px}
+.hd .ic{font-size:56px}.hd h1{margin:0;font-size:clamp(24px,5vw,38px);line-height:1.15}.hd p{margin:6px 0 0;opacity:.92}.hd .t{flex:1;min-width:220px}
+.sec{background:var(--cd);border:1px solid var(--bd);border-radius:14px;padding:16px;margin-top:14px}
+.sec>h2{margin:0 0 10px;font-size:13px;letter-spacing:.09em;text-transform:uppercase;color:var(--k)}
+.sec p{margin:0;font-size:15px}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px}
+.st{background:var(--ks);border-radius:12px;padding:12px;text-align:center;font-size:13px}
+.st b{display:block;font-size:14px;margin:4px 0}.st .n{display:inline-block;background:var(--k);color:var(--bg);border-radius:50%;width:24px;height:24px;line-height:24px;font-size:13px;font-weight:700}
+.st small{display:block;margin-top:8px;padding-top:8px;border-top:1px dashed var(--k);text-align:left;color:var(--mu);font-size:13px}.st .e{font-size:28px;display:block;margin:4px 0}
+.g2{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px}.g2 .sec{margin-top:14px}
+.kv{display:grid;gap:8px}.kv div{font-size:14px;border-left:4px solid var(--k);padding-left:10px}.kv b{display:block;color:var(--k)}
+ul{margin:0;padding-left:20px;font-size:14px}li{margin:4px 0}.ok li{list-style:"✅ "}.no li{list-style:"⚠️ "}
+.tags{display:flex;flex-wrap:wrap;gap:8px}.tags span{border:1.5px solid var(--k);color:var(--k);border-radius:99px;padding:3px 12px;font-size:13px;font-weight:600}
+.kp{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px}
+.kp div{background:var(--ks);border-radius:12px;padding:10px;text-align:center;font-size:12px;color:var(--mu)}.kp em{display:block;font-style:normal;font-size:11px;font-weight:600;color:var(--k);margin:2px 0 6px}.kp b{display:block;font-size:20px;color:var(--k)}
+.q{border-left:5px solid var(--k);background:var(--ks);border-radius:10px;padding:12px 14px;font-size:15px;font-weight:600}
+.sg{margin-top:14px;background:var(--ks);border:1.5px dashed var(--k);border-radius:12px;padding:12px 14px;font-size:15px}.sg b{color:var(--k)}.cs{margin:0 0 12px!important;font-size:14px!important;color:var(--mu)}
+.ft{text-align:center;color:var(--mu);font-size:13px;margin:16px 0 4px}
+/* relación */
+.hd.rel{background:linear-gradient(120deg,var(--crm),var(--erp),var(--scm));color:#fff}
+.sgr{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px}
+.sgr div{border-left:5px solid var(--c);padding:6px 10px;font-size:14px}.sgr b{color:var(--c);font-size:17px}
+.crm{--c:var(--crm)}.scm{--c:var(--scm)}.erp{--c:var(--erp)}
+.ans{border:2px solid var(--erp);border-radius:14px;padding:16px;margin-top:14px;background:var(--cd)}.ans h2{margin:0 0 8px;font-size:18px}.ans p{margin:6px 0;font-size:15px}
+.map{display:grid;grid-template-columns:1fr auto 1.25fr auto 1fr;gap:8px;align-items:stretch}
+.nd{border:2px solid var(--c);border-radius:14px;padding:12px;text-align:center;font-size:13px}
+.nd .t{display:inline-block;background:var(--c);color:var(--bg);font-weight:800;border-radius:99px;padding:2px 12px;font-size:14px}
+.nd .e{font-size:30px;display:block;margin:6px 0 2px}.nd b{display:block;font-size:14px}
+.ar{align-self:center;font-size:24px;color:var(--mu)}.cap{margin:10px 0 0!important;font-size:14px!important;color:var(--mu)}
+@media (max-width:640px){.map{grid-template-columns:1fr}.ar{transform:rotate(90deg);justify-self:center}}
+.tb{overflow-x:auto}table{border-collapse:collapse;width:100%;min-width:560px;font-size:13px}
+th,td{border:1px solid var(--bd);padding:8px;text-align:left;vertical-align:top}th{color:var(--c)}td:first-child{font-weight:700;color:var(--mu)}
+.sx{display:grid;gap:10px}.s{display:flex;gap:10px;align-items:flex-start;font-size:14px}
+.s .n{flex:none;width:26px;height:26px;border-radius:50%;background:var(--mu);color:var(--bg);text-align:center;line-height:26px;font-weight:700;font-size:13px}
+.bd{flex:none;min-width:48px;text-align:center;background:var(--c);color:var(--bg);font-weight:800;border-radius:8px;padding:2px 8px;font-size:12px}
+.op{border:1px solid var(--bd);border-top:5px solid var(--erp);border-radius:12px;padding:12px;font-size:14px}.op b{display:block;font-size:15px;margin-bottom:4px}
+.g3{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:12px}
+</style></head><body><div class="w">
+<nav class="nav" role="tablist" id="nav"></nav>
+<main id="main"></main>
+<p class="ft">Guárdalo y compártelo con tu equipo</p></div>
+<script>
+const D=[
+{id:'erp',k:'erp',tab:'🏢 ERP',ic:'🏢',h:'¿Qué es el ERP?',sub:'Un solo programa para manejar toda la empresa',
+sg:'<b>ERP</b> = <b>E</b>nterprise <b>R</b>esource <b>P</b>lanning<br>Significa: <b>Planificación de Recursos Empresariales</b> (recursos = dinero, productos y personas)',
+w:'Es un solo programa donde la empresa maneja todas sus áreas: ventas, bodega, compras, cuentas y personal. Todas usan los mismos datos, así nadie tiene que copiar la misma información de un programa a otro. Es como pasar de un cuaderno por área a un solo cuaderno compartido.',
+cs:'📖 Seguimos una venta de unas zapatillas por todas las áreas de «Zapatos Sol», la tienda que vende por internet.',
+st:[['🛒','Ventas','Registrar lo que se vende','Un cliente compra unas zapatillas talla 40 en la web y el pedido queda registrado en el ERP.'],['📦','Inventario','Saber cuánto hay en bodega','El ERP descuenta ese par del inventario y le avisa a la bodega que lo prepare.'],['🛍️','Compras','Pedir lo que falta a los proveedores','Quedan 20 pares de esa talla: el ERP avisa «Queda poco» y sugiere hacer un nuevo pedido a la fábrica.'],['💵','Contabilidad','Anotar el dinero que entra y sale','El ERP genera la factura (el comprobante de la venta) y anota el ingreso sin que nadie lo escriba otra vez.'],['👥','Personal','Pagar sueldos y manejar al equipo','Con las ventas del mes, el ERP calcula la comisión del vendedor (un pequeño porcentaje por cada venta) y la suma a su sueldo.'],['📊','Reportes','Ver cómo va todo el negocio','El gerente abre un solo panel y ve ventas, inventario y dinero del mes, sin pedir informes a cada área.']],
+kv:[['Módulo (una sección)','Cada área del ERP, como ventas o contabilidad.'],['Datos compartidos','Lo que registra un área lo ven las demás al instante.'],['Integrado (conectado)','Las áreas se hablan entre sí, sin copiar datos a mano.'],['CRM y SCM','Suelen ser una sección del ERP o un programa que se conecta a él.']],
+ben:['Todas las áreas trabajan con los mismos datos','Menos trabajo repetido y menos errores','El gerente ve todo el negocio en un solo lugar','La empresa puede crecer sin desorden'],
+tools:['SAP','Oracle','Odoo','Microsoft Dynamics'],
+err:['Querer activarlo todo el mismo día','No enseñar al equipo a usarlo','Que cada área siga usando su Excel aparte','Elegir el programa sin saber qué necesita la empresa','Cargar datos desordenados al empezar'],
+kpi:[['Exactitud del inventario','Inventory Accuracy = Precisión del Inventario','Qué tan igual es lo que dice el programa a lo que hay en bodega'],['Ciclo del pedido','Del pedido a la entrega','Cuánto pasa desde que el cliente compra hasta que recibe su producto'],['Cierre del mes','Tiempo de cierre contable','Cuántos días tardan en tener las cuentas del mes listas'],['Errores de datos','Datos incorrectos','Cuántos registros tienen errores y hay que corregirlos'],['Adopción','Uso del sistema','Qué parte del equipo realmente lo usa']],
+bp:['Empieza por las áreas que más lo necesitan y ve sumando otras','Enseña al equipo antes de empezar','Ordena y limpia los datos antes de cargarlos','Asigna a una persona responsable del sistema','Que todas las áreas usen el mismo programa'],
+q:'Un ERP hace que toda la empresa trabaje con la misma información.'},
+{id:'crm',k:'crm',tab:'🤝 CRM',ic:'🤝',h:'¿Qué es el CRM?',sub:'Conocer y cuidar a tus clientes para vender más',
+sg:'<b>CRM</b> = <b>C</b>ustomer <b>R</b>elationship <b>M</b>anagement<br>Significa: <b>Gestión de la Relación con el Cliente</b>',
+w:'Es como una libreta inteligente donde la empresa guarda todo sobre cada cliente: quién es, qué compró, qué preguntó y cuándo volver a escribirle. Así nadie pierde el hilo y el cliente se siente atendido.',
+cs:'📖 Seguimos a María, que busca un sofá en la tienda de muebles «Hogar Feliz».',
+st:[['🎯','Captar leads (clientes potenciales)','Recibir y guardar a los interesados que llegan por tu web, redes o recomendaciones','María ve un anuncio de sofás en Instagram y deja en un formulario su nombre, teléfono y el tipo de sofá que busca. Como el formulario está conectado al CRM, sus datos llegan automáticamente, se crea su ficha (el registro con todos sus datos) y se asigna al vendedor Carlos.'],['🗂️','Registrar','Guardar nombre, contacto y qué buscan, en un solo lugar','Carlos habla con ella y anota en la ficha: sofá gris para 3 personas y su presupuesto. Cualquier compañero puede verlo.'],['📞','Seguimiento','Escribir o llamar en el momento justo','María le dice que lo va a pensar. Carlos programa en la ficha un recordatorio para dentro de 2 días, para no presionarla ni olvidarse. Ese día el CRM le avisa: «Escríbele a María hoy», y él le manda por WhatsApp fotos de sofás grises para 3 personas.'],['🤝','Cerrar la venta','Enviar el precio y concretar el trato','Carlos le envía el precio de un sofá y mueve el trato a la etapa «Precio enviado». María acepta y Carlos lo marca como «Vendido».'],['🎧','Posventa','Atender después de vender: resolver dudas y problemas','El sofá llega con un rasguño y María llama a soporte. Soporte ve toda su compra en la ficha y lo resuelve sin pedirle los datos otra vez.'],['🔁','Fidelizar','Lograr que vuelvan: ofrecerles algo nuevo y mantener el contacto','La tienda dejó programado un correo automático: a los 6 meses, María recibe un 10% de descuento en cojines y mesas que combinan con su sofá.']],
+kv:[['Lead (cliente potencial)','Alguien interesado que todavía no ha comprado.'],['Pipeline (embudo de ventas)','El camino de "me interesa" a "ya compré".'],['Ficha del cliente','Todo lo que sabemos de una persona, en una sola pantalla.'],['Segmentar (agrupar)','Juntar clientes parecidos para enviarles mensajes que sí les sirvan.']],
+ben:['Sabes todo de cada cliente en un solo lugar','Vendes más porque no olvidas dar seguimiento','Los mensajes llegan a quien le interesan','Todo el equipo trabaja con la misma información','Puedes ver cuánto vas a vender'],
+tools:['Salesforce','HubSpot','Zoho CRM','Pipedrive','Odoo'],
+err:['Guardar datos incompletos o repetidos','Comprar el programa sin tener claro cómo se vende','Que el equipo no lo use','Tener los datos separados del correo y la web','Mirar solo las ventas y olvidar si el cliente quedó contento'],
+kpi:[['CAC','Customer Acquisition Cost = Costo de Adquirir un Cliente','Cuánto gastas, en promedio, para conseguir un cliente nuevo'],['Conversión','De interesado a comprador','De cada 100 interesados, cuántos compran'],['LTV','Lifetime Value = Valor de Vida del Cliente','Cuánto dinero deja un cliente mientras siga con la empresa'],['Churn','Abandono de clientes','Cuántos clientes se van y no regresan'],['NPS','Net Promoter Score = Índice de Recomendación','Qué tan contentos están: ¿te recomendarían?']],
+bp:['Primero define cómo vendes, después elige el programa','Mantén los datos limpios y completos','Programa recordatorios para dar seguimiento','Enseña al equipo a usarlo y revisa que lo hagan','Conéctalo con tu correo y tu página web'],
+q:'Un CRM no es solo un programa: es poner al cliente primero.'},
+{id:'scm',k:'scm',tab:'🚚 SCM',ic:'🚚',h:'¿Qué es el SCM?',sub:'Que el producto llegue bien, a tiempo y sin gastar de más',
+sg:'<b>SCM</b> = <b>S</b>upply <b>C</b>hain <b>M</b>anagement<br>Significa: <b>Gestión de la Cadena de Suministro</b>',
+w:'Es todo el camino de un producto: desde quien da los materiales, pasando por la fábrica y la bodega, hasta la casa del cliente. Cuidarlo bien evita que falte producto o que sobre y se pierda. Ejemplo: que el supermercado nunca se quede sin leche, ni tenga tanta que se venza.',
+cs:'📖 Seguimos a «Zapatos Sol», una tienda que vende zapatillas por internet.',
+st:[['📊','Planificar','Calcular cuánto se va a vender','El año pasado vendieron 500 pares de zapatillas en diciembre y las ventas van creciendo, así que el programa sugiere pedir 600. El gerente, más prudente, lo ajusta a 550.'],['🛒','Abastecer','Comprar a los proveedores','Se genera la orden de compra para la fábrica que les hace las zapatillas. Si la fábrica avisa de un retraso y alguien lo registra, el programa alerta al equipo de compras para buscar un plan B.'],['⚙️','Producir','Fabricar o armar el producto','La fábrica organiza cuándo hacer cada modelo según los materiales que tiene disponibles, como cuero y suelas.'],['📦','Almacenar','Guardarlo en bodega, listo para salir','Cada venta se descuenta del inventario. Cuando quedan 20 pares de talla 40, el programa avisa «Queda poco» y se pide más antes de que se agoten.'],['🚚','Distribuir','Enviarlo al cliente','Llega un pedido de otra ciudad. El programa compara los precios de las empresas de transporte y propone el más barato. El cliente sigue su envío con un número de seguimiento.'],['↩️','Logística inversa','Recibir devoluciones y darles solución','Un cliente devuelve unas zapatillas porque le quedaron pequeñas. Se registra la devolución, se revisan y, si están bien, vuelven a la venta.']],
+kv:[['Proveedor (quien nos vende)','Quien nos vende los materiales o productos.'],['Inventario (lo guardado)','Lo que tenemos en bodega.'],['Stock de seguridad (reserva)','Producto extra por si algo se retrasa.'],['Lead time (tiempo de entrega)','Lo que pasa desde que pides hasta que llega.']],
+ben:['Gastas menos en transporte y almacenamiento','Los pedidos llegan a tiempo','Casi nunca te quedas sin producto','Sabes dónde está todo en cada momento','Aguantas mejor los imprevistos'],
+tools:['SAP','Oracle','Kinaxis','Blue Yonder','Odoo'],
+err:['Adivinar cuánto se va a vender','Depender de un solo proveedor','Que compras, ventas y bodega no se hablen','Mirar solo el precio y no el costo total','Olvidar las devoluciones'],
+kpi:[['OTIF','On Time In Full = A Tiempo y Completo','Pedidos entregados a tiempo y sin faltantes'],['Rotación','Rotación de inventario','Qué tan rápido se vende lo que hay en bodega'],['Lead time','Tiempo de entrega','Cuánto tarda un pedido en llegar'],['Costo por pedido','Costo de envío','Cuánto cuesta enviar cada pedido'],['Fill rate','Tasa de cumplimiento','De cada 100 productos que piden, cuántos logramos entregar']],
+bp:['Compartir información con los proveedores','Tener más de un proveedor para lo importante','Cuidar primero lo que más se vende','Revisar los datos todos los días','Tener un plan por si algo falla'],
+q:'Una cadena es tan fuerte como su parte más débil.'},
+{id:'km',k:'km',tab:'🧠 Conocimiento',ic:'🧠',h:'¿Qué es la Gestión del Conocimiento?',sub:'Guardar y compartir lo que sabe tu equipo',
+sg:'<b>KM</b> = <b>K</b>nowledge <b>M</b>anagement<br>Significa: <b>Gestión del Conocimiento</b>',
+w:'Es guardar y compartir lo que sabe la gente de una empresa para que no se pierda cuando alguien renuncia o se va de vacaciones. Es como una receta: si solo la sabe una persona, un día nadie podrá preparar el plato.',
+cs:'📖 Seguimos a Luis, que acaba de entrar a una empresa de soporte técnico (ayuda a clientes con sus problemas).',
+st:[['💡','Crear','Cada persona descubre cosas al trabajar','Ana, la compañera más veterana, descubre cómo arreglar rápido un problema muy común: a los clientes les sale mal el monto en su factura.'],['📝','Capturar','Escribir guías, grabar videos, listar pasos','Ana lo escribe en una plantilla (un formato ya listo para llenar) de 5 pasos con capturas de pantalla. Le toma 15 minutos.'],['🗃️','Organizar','Carpetas y etiquetas para encontrarlo','Ana guarda la guía en la carpeta «Errores comunes» y le pone la etiqueta «facturación».'],['🔍','Compartir','Que todos puedan buscarlo','Luis atiende a un cliente con la factura mal. Escribe «error facturación» en el buscador interno (como Google, pero solo de la empresa) y encuentra la guía de Ana en segundos.'],['🛠️','Aplicar','Llevarlo al trabajo diario','Luis resuelve el caso solo. Al seguir la guía nota que el paso 3 ya no es igual y comenta: «El paso 3 cambió con la versión nueva del programa».'],['♻️','Actualizar','Corregir lo que cambió','Ana corrige la guía con el comentario de Luis. Además, el programa le envía un aviso cada 6 meses para que revise si todavía sirve.']],
+kv:[['Conocimiento tácito (en la cabeza)','Lo que alguien sabe por experiencia pero nunca escribió.'],['Conocimiento explícito (escrito)','Lo que ya está en manuales, guías o videos.'],['Base de conocimiento (biblioteca)','Un lugar con todas las guías y respuestas.'],['Onboarding (primeros días de alguien nuevo)','Ayudar a alguien nuevo a aprender rápido su trabajo.']],
+ben:['El nuevo aprende más rápido','No dependes de una sola persona','Menos preguntas repetidas','Menos errores repetidos','Mejores decisiones y nuevas ideas'],
+tools:['Notion','Confluence','SharePoint','Google Drive','Wikis (enciclopedia interna)'],
+err:['Escribir una guía y nunca actualizarla','Tener la información repartida en muchos lugares','No dar tiempo ni reconocimiento a quien comparte','Que la búsqueda no encuentre nada','Hacerlo una sola vez y olvidarlo'],
+kpi:[['Uso','Consultas de las guías','Cuánta gente las usa'],['Búsqueda','Tiempo de búsqueda','Cuánto tardan en hallar una respuesta'],['Reutilización','Guías aplicadas','Cuántas veces se usa una guía'],['Actualización','Información al día','Qué parte de la información está vigente'],['Onboarding','Tiempo de adaptación','Días que tarda alguien nuevo en trabajar solo']],
+bp:['Cada guía tiene una persona responsable','Escribir lo que sabes es parte del trabajo, no un extra','Usa el mismo formato y los mismos nombres','Revisa y borra lo viejo cada cierto tiempo','Reconoce a quien comparte lo que sabe'],
+q:'Lo que no se escribe se pierde cuando alguien se va.'}];
+
+const REL=`<div class="hd rel"><div class="t"><h1>CRM, SCM y ERP: ¿cómo se relacionan?</h1><p>No son lo mismo ni uno es "el grande" de los otros: cada uno cuida una parte distinta de la empresa.</p></div></div>
+<div class="sec"><h2 style="color:var(--mu)">Primero, qué significa cada sigla</h2><div class="sgr">
+<div class="crm"><b>CRM</b><br>Customer Relationship Management<br>= Gestión de la Relación con el Cliente</div>
+<div class="scm"><b>SCM</b><br>Supply Chain Management<br>= Gestión de la Cadena de Suministro</div>
+<div class="erp"><b>ERP</b><br>Enterprise Resource Planning<br>= Planificación de Recursos Empresariales</div></div></div>
+<div class="ans"><h2>¿Quién contiene a quién?</h2>
+<p><b>Como idea: ninguno contiene a los otros.</b> Cada uno resuelve algo distinto (clientes, proveedores, o la empresa por dentro).</p>
+<p><b>Como programa: lo más común es que el ERP sea la base</b> y traiga el CRM y el SCM como secciones, o se conecte a ellos.</p>
+<p>Lo contrario casi no pasa: un CRM o un SCM normalmente no incluyen un ERP completo.</p></div>
+<div class="sec"><h2 style="color:var(--mu)">El mapa: cada uno mira a un lado distinto</h2><div class="map">
+<div class="nd scm"><span class="t">SCM</span><span class="e">🏭</span><b>Mira hacia los proveedores</b>Cuida que el producto llegue a tiempo y sin gastar de más.</div><div class="ar">⇄</div>
+<div class="nd erp"><span class="t">ERP</span><span class="e">🏢</span><b>La empresa por dentro</b>Ventas, bodega, compras, dinero y personal, en un solo programa con los mismos datos.</div><div class="ar">⇄</div>
+<div class="nd crm"><span class="t">CRM</span><span class="e">👥</span><b>Mira hacia los clientes</b>Guarda quién es cada cliente y cuándo volver a escribirle.</div></div>
+<p class="cap">Piensa en una casa: el ERP es la casa, el CRM es la puerta hacia los clientes y el SCM es la puerta hacia los proveedores.</p></div>
+<div class="sec"><h2 style="color:var(--mu)">Comparación rápida</h2><div class="tb"><table>
+<tr><th></th><th style="--c:var(--crm)">CRM</th><th style="--c:var(--scm)">SCM</th><th style="--c:var(--erp)">ERP</th></tr>
+<tr><td>¿Qué cuida?</td><td>La relación con los clientes</td><td>El camino del producto, de proveedor a cliente</td><td>Toda la empresa por dentro</td></tr>
+<tr><td>¿Qué pregunta responde?</td><td>¿Quién me compra y cómo lo atiendo?</td><td>¿Cómo llega el producto a tiempo y sin gastar de más?</td><td>¿Cómo van el dinero, la bodega y el personal?</td></tr>
+<tr><td>¿Con quién se relaciona?</td><td>Clientes</td><td>Proveedores y empresas de transporte</td><td>Todas las áreas de la empresa</td></tr>
+<tr><td>Programas que se usan</td><td>Salesforce, HubSpot</td><td>Kinaxis, Blue Yonder</td><td>SAP, Oracle, Odoo</td></tr></table></div></div>
+<div class="sec"><h2 style="color:var(--mu)">Los tres trabajando juntos: una venta de «Zapatos Sol»</h2><div class="sx">
+<div class="s"><span class="n">1</span><span class="bd crm">CRM</span><span>Valeria deja sus datos en la web de la tienda para pedir unas zapatillas talla 40. El CRM crea su ficha y le avisa al vendedor.</span></div>
+<div class="s"><span class="n">2</span><span class="bd erp">ERP</span><span>Valeria compra. El ERP registra el pedido, descuenta el par del inventario y genera la factura (el comprobante de la venta).</span></div>
+<div class="s"><span class="n">3</span><span class="bd scm">SCM</span><span>Quedan 20 pares de esa talla. Esta parte avisa «Queda poco» y propone pedir más a la fábrica.</span></div>
+<div class="s"><span class="n">4</span><span class="bd erp">ERP</span><span>Cuando llegan las zapatillas nuevas, el ERP registra la compra y lo que hay que pagarle a la fábrica.</span></div>
+<div class="s"><span class="n">5</span><span class="bd crm">CRM</span><span>Una semana después, el CRM le envía a Valeria un correo para preguntarle si le gustaron las zapatillas.</span></div></div>
+<p class="cap">💡 Si la tienda usa un ERP que trae las tres secciones, todo esto pasa dentro de un solo programa. Si no, cada paso ocurre en un programa distinto, conectados entre sí.</p></div>
+<div class="sec"><h2 style="color:var(--mu)">Tres formas de tenerlos en la práctica</h2><div class="g3">
+<div class="op"><b>1. Todo en uno</b>Un ERP que ya trae el CRM y el SCM como secciones (por ejemplo Odoo o SAP). Ventaja: un solo lugar y los mismos datos. A veces sus secciones son menos completas que un programa especializado.</div>
+<div class="op"><b>2. Cada uno por su lado, conectados</b>Un ERP más un CRM especializado (por ejemplo HubSpot). Es más completo, pero alguien debe configurar la conexión para que los datos viajen solos.</div>
+<div class="op"><b>3. Solo uno</b>Muchas empresas pequeñas empiezan solo con un CRM, sin ERP, y agregan lo demás cuando crecen.</div></div></div>
+<div class="sec" style="--k:var(--erp);--ks:color-mix(in srgb,var(--erp) 9%,transparent)"><div class="q">💡 CRM, SCM y ERP no compiten: el ERP es la base de la empresa, el CRM la conecta con los clientes y el SCM con los proveedores.</div></div>`;
+
+const L=a=>a.map(x=>`<li>${x}</li>`).join('');
+function render(d){return `<div class="hd"><div class="ic">${d.ic}</div><div class="t"><h1>${d.h}</h1><p>${d.sub}</p></div></div>
+<div class="sg">${d.sg}</div>
+<div class="sec"><h2>¿Qué es?</h2><p>${d.w}</p></div>
+<div class="sec"><h2>¿Cómo funciona? (un ejemplo paso a paso)</h2><p class="cs">${d.cs}</p><div class="steps">${d.st.map((s,i)=>`<div class="st"><span class="n">${i+1}</span><span class="e">${s[0]}</span><b>${s[1]}</b>${s[2]}<small>${s[3]}</small></div>`).join('')}</div></div>
+<div class="g2"><div class="sec"><h2>Palabras que verás</h2><div class="kv">${d.kv.map(x=>`<div><b>${x[0]}</b>${x[1]}</div>`).join('')}</div></div>
+<div class="sec"><h2>Beneficios</h2><ul class="ok">${L(d.ben)}</ul></div></div>
+<div class="g2"><div class="sec"><h2>Programas que se usan</h2><div class="tags">${d.tools.map(t=>`<span>${t}</span>`).join('')}</div></div>
+<div class="sec"><h2>Errores comunes</h2><ul class="no">${L(d.err)}</ul></div></div>
+<div class="sec"><h2>KPIs (números que te dicen si vas bien)</h2><div class="kp">${d.kpi.map(x=>`<div><b>${x[0]}</b><em>${x[1]}</em>${x[2]}</div>`).join('')}</div></div>
+<div class="sec"><h2>Buenas prácticas</h2><ul class="ok">${L(d.bp)}</ul></div>
+<div class="sec"><div class="q">💡 ${d.q}</div></div>`}
+
+const nav=document.getElementById('nav'),main=document.getElementById('main');
+const T=[{id:'rel',k:'rel',tab:'🔗 Relación',html:REL}].concat(D.map(d=>({id:d.id,k:d.k,tab:d.tab,html:render(d)})));
+T.forEach(t=>{
+  const b=document.createElement('button');b.textContent=t.tab;b.id='b-'+t.id;b.setAttribute('role','tab');b.style.setProperty('--c','var(--'+t.k+')');
+  b.onclick=()=>show(t.id);nav.appendChild(b);
+  const s=document.createElement('section');s.className='p';s.id='p-'+t.id;s.setAttribute('role','tabpanel');s.style.setProperty('--k','var(--'+t.k+')');s.innerHTML=t.html;main.appendChild(s);
+});
+function show(id,skip){
+  T.forEach(t=>{const on=t.id===id;document.getElementById('p-'+t.id).classList.toggle('on',on);const b=document.getElementById('b-'+t.id);b.setAttribute('aria-selected',on);if(on)b.scrollIntoView({inline:'center',block:'nearest'})});
+  if(!skip){try{history.replaceState(null,'','#'+id)}catch(e){}}
+  window.scrollTo(0,0);
+}
+let h='rel';try{h=location.hash.slice(1)}catch(e){}
+show(T.some(t=>t.id===h)?h:'rel',true);
+</script></body></html>
